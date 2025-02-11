@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>"FOREVER IN TIME: TICKETS AVAILABLE NOW"</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            background: url('pearlharbor.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-szie: 40px;
+            font-family: monospace;
+        }
+
+        .translucent-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-warning {
+            font-weight: bold;
+        }
+    </style>
+
+    
+</head>
+
+
+<body>
+    <div class="container-fluid p-5 text-center translucent-container">
+        <h1 style="font-size: 45px;"><b>SHOWING 12/07/2025: Forever in Time by Sophia Jimenez</b></h1>
+    </div>
+    <br>
+
+
+    <div class="container">
+        <h1><b>Reserve Tickets Below:</b></h1>
+    </div>
+
+    <div class="container p-3 translucent-container mt-4">
+        <details ontoggle="message()">
+            <summary><h4>Personal Information</h4></summary>
+            <form>
+                <label>Name:</label>
+                <input class="form-control" type="text" id="name" placeholder="Type here...">
+                <br>
+
+                <label>Email:</label>
+                <input class="form-control" type="text" id="email" placeholder="Type here...">
+                <br>
+
+                <button class="btn btn-warning" type="button" onclick="show()">Submit Information</button>
+            </form>
+        </details>
+    </div>
+
+
+
+    <div class="container p-3 translucent-container mt-4">
+        <details ontoggle="message2()">
+            <summary><h4>Ticket Price</h4></summary>
+            <form>
+                <label>Select Ticket (based on seating)</label>
+                <select id="tickets" class="form-select">
+                    <option value="none">Select</option>
+                    <option value="400">General admission</option>
+                    <option value="650">Reserved seating</option>
+                    <option value="1000">VIP tickets</option>
+                </select>
+                <br>
+
+                <label>Discount</label>
+                <select id="discount" class="form-select">
+                    <option value="none">Select</option>
+                    <option value="0.2">PWD/SC/STUDENT</option>
+                    <option value="0">Regular</option>
+                </select>
+                <br>
+
+                <button class="btn btn-warning" type="button" onclick="check_discount()">Check Ticket Price</button>
+            </form>
+        </details>
+    </div>
+
+
+
+    <div class="container p-3 translucent-container mt-4">
+        <details ontoggle>
+            <summary><h4>Print your Ticket</h4></summary>
+            <img src="ticket.png" alt="Ticket print" class="img-fluid">
+            <br><br>
+            <button class="btn btn-warning" type="button" onclick="ticket()">Print Ticket</button>
+        </details>
+    </div>
+
+
+
+
+    <script>
+        function message() {
+            window.alert('To reserve tickets, please fill in the form below.');
+        }
+
+        function show() {
+            var name = document.getElementById('name').value;
+            window.alert('Hi, ' + name + "! Please proceed to the next form below.");
+        }
+
+        function message2() {
+            window.alert('P.S. Tickets are based on seating.');
+        }
+
+        function check_discount() {
+            var tickets1 = parseFloat(document.getElementById('tickets').value);
+            var disc1 = parseFloat(document.getElementById('discount').value) || 0;
+            var final_rate = tickets1 - (disc1 * tickets1);
+            window.alert('Your ticket price is PHP ' + final_rate.toFixed(2) + ". Click OK to pay.");
+        }
+
+        function ticket() {
+            window.alert('Successful printing and payment! Thank you for your purchase and see you in cinemas on December 7, 2025!');
+        }
+    </script>
+
+   
+
+   <div class="container p-3">
+
+    <a href= "https://www.google.com/search?sca_esv=4001fc3044941daf&rlz=1C1UEAD_enAU1011AU1011&sxsrf=AHTn8zoVsv1agEfHkrAN6CWdqnSE5F2uPQ:1739246631409&q=pearl+harbor+colored&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBtmuEdhfywyzhendkLDnhcq4Fx59GJo42IHin57PCNq1BCLfVKQIWPymDGFj2PR-DSz9AKdvScPNG1zf5KhAmiXA2AihCAO4o-7j1F8q-hjKxPAAHZun3MN3MT8s6xwh-G2N4jwUKA426uqWUvtCstjt-MshT_MrRx1l7bLbMoTh5ehWSQ&sa=X&ved=2ahUKEwje-5DN3rqLAxX6sFYBHT6fK6UQtKgLegQIFhAB&biw=1920&bih=1068&dpr=0.8"><b> Sources: Link to picture reference and sources</b></a>
+    <p>@ Rights Reserved: Sophia Jimenez</p>
+
+  </div>
+
+</body>
+</html>
